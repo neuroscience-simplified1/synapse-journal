@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Synapse Journal | Neuroscience Awareness & Brain Science</title>
+
+<meta name="description" content="Synapse Journal is a student-led neuroscience platform simplifying brain science, epilepsy awareness, and neurological education through clear, accessible writing.">
+<meta name="keywords" content="neuroscience, brain science, epilepsy awareness, ADHD education, synapse journal, neuroscience blog, student neuroscience research">
+<meta property="og:title" content="Synapse Journal">
+<meta property="og:description" content="Neuroscience awareness made simple.">
+<meta property="og:type" content="website">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --navy:#0B1F3B;
+  --deep:#070F1C;
+  --teal:#2A9D8F;
+  --sky:#A8DADC;
+  --bg:#F6F8FB;
+  --text:#0f172a;
+  --muted:#6B7280;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family:Inter;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+/* NAV */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 20px;
+  background:rgba(11,31,59,0.85);
+  backdrop-filter:blur(12px);
+  color:white;
+  z-index:1000;
+}
+
+nav a{
+  color:#cbd5e1;
+  margin-left:14px;
+  font-size:13px;
+  text-decoration:none;
+  cursor:pointer;
+}
+
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background:linear-gradient(135deg,var(--navy),var(--deep));
+  color:white;
+  padding:20px;
+}
+
+.hero h1{
+  font-family:'Playfair Display';
+  font-size:52px;
+  animation:fadeUp 1s ease forwards;
+}
+
+.hero p{
+  max-width:650px;
+  margin-top:12px;
+  color:#cbd5e1;
+  animation:fadeUp 1s ease forwards 0.3s;
+}
+
+/* LOGO */
+.logo{
+  margin-bottom:15px;
+}
+
+/* SECTIONS */
+section{
+  max-width:1100px;
+  margin:auto;
+  padding:90px 20px;
+}
+
+.title{
+  font-size:14px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--navy);
+  margin-bottom:25px;
+}
+
+/* CARDS */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:22px;
+}
+
+.card{
+  background:white;
+  padding:22px;
+  border-radius:14px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.07);
+  cursor:pointer;
+  transition:0.4s ease;
+  opacity:0;
+  transform:translateY(30px);
+}
+
+.card:hover{
+  transform:translateY(-6px) scale(1.02);
+}
+
+.card h3{
+  color:var(--navy);
+  margin-bottom:10px;
+}
+
+.card p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* ARTICLE VIEW */
+.article{
+  display:none;
+  max-width:800px;
+  margin:auto;
+  padding:120px 20px;
+  animation:fadeIn 0.5s ease;
+}
+
+.back{
+  color:var(--teal);
+  cursor:pointer;
+  margin-bottom:20px;
+}
+
+/* NEWSLETTER */
+.newsletter{
+  background:linear-gradient(135deg,var(--sky),#dbeafe);
+  padding:60px 20px;
+  text-align:center;
+  border-radius:16px;
+}
+
+input{
+  padding:12px;
+  width:65%;
+  max-width:320px;
+  border:none;
+  border-radius:8px;
+}
+
+button{
+  padding:12px 16px;
+  border:none;
+  background:var(--teal);
+  color:white;
+  border-radius:8px;
+  margin-left:8px;
+  cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+  background:var(--navy);
+  color:#cbd5e1;
+  text-align:center;
+  padding:35px;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+@keyframes fadeIn{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+
+.show{
+  opacity:1 !important;
+  transform:translateY(0) !important;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div style="display:flex;align-items:center;gap:10px;">
+
+<!-- LOGO -->
+<svg width="28" height="28" viewBox="0 0 100 100">
+  <circle cx="20" cy="30" r="6" fill="#2A9D8F"/>
+  <circle cx="55" cy="20" r="6" fill="#A8DADC"/>
+  <circle cx="75" cy="60" r="6" fill="#2A9D8F"/>
+  <line x1="20" y1="30" x2="55" y2="20" stroke="#ffffff" stroke-width="3"/>
+  <line x1="55" y1="20" x2="75" y2="60" stroke="#ffffff" stroke-width="3"/>
+</svg>
+
+<b>SYNAPSE JOURNAL</b>
+</div>
+
+<div>
+<a onclick="showHome()">Home</a>
+<a onclick="scrollTo('articles')">Articles</a>
+<a onclick="scrollTo('newsletter')">Newsletter</a>
+</div>
+</nav>
+
+<!-- HOME -->
+<div id="home">
+
+<div class="hero">
+<h1>Understanding the Brain.<br>Reducing Stigma.</h1>
+<p>A student-led neuroscience journal translating brain science into accessible education and awareness.</p>
+</div>
+
+<section id="articles">
+
+<div class="title">Latest Publications</div>
+
+<div class="grid">
+
+<div class="card" onclick="openArticle('epilepsy')">
+<h3>Epilepsy Explained</h3>
+<p>Scientific understanding of seizures and stigma correction.</p>
+</div>
+
+<div class="card" onclick="openArticle('neurons')">
+<h3>Neurons & Synapses</h3>
+<p>How brain cells communicate through electrical signals.</p>
+</div>
+
+<div class="card" onclick="openArticle('myths')">
+<h3>Neuroscience Myths</h3>
+<p>Debunking misconceptions about brain function and ADHD.</p>
+</div>
+
+</div>
+</section>
+<section id="about">
+  <div class="container">
+
+    <h2>About Synapse Journal</h2>
+
+    <p>
+      <strong>Synapse Journal</strong> is a student-led neuroscience initiative dedicated to making brain science accessible, evidence-based, and engaging for everyone. Our mission is to bridge the gap between scientific research and everyday understanding by translating complex neuroscience into clear, accurate, and compassionate articles.
+    </p>
+
+    <p>
+      We believe that knowledge is one of the most effective tools for reducing stigma surrounding neurological conditions. Through educational content, myth-busting articles, and research-inspired writing, Synapse Journal aims to encourage curiosity while promoting empathy for individuals living with neurological disorders.
+    </p>
+
+    <p>
+      Our long-term vision is to grow into a trusted student publication that inspires young researchers, science communicators, and lifelong learners to explore the remarkable complexity of the human brain.
+    </p>
+
+    <hr style="margin:40px 0; border:none; border-top:1px solid #dbe3ec;">
+
+    <h3>Founder</h3>
+
+    <p>
+      <strong>Anvesha Awasthi</strong> is a high school student from India with a growing interest in neuroscience, science communication, and medical research. Inspired by witnessing the real-life impact of neurological disorders within her family, she founded Synapse Journal to promote scientific literacy and encourage more thoughtful conversations about brain health.
+    </p>
+
+    <p>
+      Through this initiative, she hopes to contribute to neuroscience awareness while continuing to learn, research, and collaborate with the global scientific community.
+    </p>
+
+  </div>
+</section>
+<section id="newsletter">
+<div class="newsletter">
+<h2>Stay Connected</h2>
+<p>Get neuroscience insights and research updates.</p>
+<br>
+<input placeholder="Enter email">
+<button>Subscribe</button>
+</div>
+</section>
+
+</div>
+
+<!-- ARTICLE VIEW -->
+<div id="article" class="article">
+<div class="back" onclick="showHome()">← Back</div>
+<h2 id="title"></h2>
+<p id="content"></p>
+</div>
+
+<footer>
+Synapse Journal © 2026 • Neuroscience • Awareness • Research Communication
+</footer>
+
+<script>
+
+function scrollTo(id){
+  document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+
+function showHome(){
+  document.getElementById("home").style.display="block";
+  document.getElementById("article").style.display="none";
+}
+
+function openArticle(type){
+  document.getElementById("home").style.display="none";
+  document.getElementById("article").style.display="block";
+
+  let t="", c="";
+
+  if(type==="epilepsy"){
+    t="Epilepsy Explained";
+    c="Epilepsy is a neurological condition caused by abnormal electrical activity in the brain. It is not a myth or behavioral issue. Awareness reduces stigma and improves understanding.";
+  }
+
+  if(type==="neurons"){
+    t="Neurons & Synapses";
+    c="Neurons communicate through electrical impulses and chemical neurotransmitters. This system forms the basis of thought, memory, and behavior.";
+  }
+
+  if(type==="myths"){
+    t="Neuroscience Myths";
+    c="Many misconceptions exist around ADHD and brain function. Scientific literacy is essential for accurate understanding.";
+  }
+
+  document.getElementById("title").innerText=t;
+  document.getElementById("content").innerText=c;
+}
+
+</script>
+
+</body>
+</html>
