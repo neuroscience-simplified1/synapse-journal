@@ -1,0 +1,43 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+site_url: "https://synapse-journal.netlify.app"
+display_url: "https://synapse-journal.netlify.app"
+
+logo_url: "/logo.png"
+
+collections:
+  - name: "articles"
+    label: "Articles"
+    folder: "content/articles"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+
+      - {label: "Author", name: "author", widget: "string", default: "Anvesha Awasthi"}
+
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - Epilepsy
+          - Brain Basics
+          - ADHD
+          - Neuroscience
+          - Research
+          - Student Voices
+          - Brain Health
+
+      - {label: "Featured Image", name: "thumbnail", widget: "image", required: false}
+
+      - {label: "Summary", name: "description", widget: "text"}
+
+      - {label: "Body", name: "body", widget: "markdown"}

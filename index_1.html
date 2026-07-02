@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Synapse Journal Admin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Decap CMS -->
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+  <style>
+    body{
+      margin:0;
+      font-family:Inter,Arial,sans-serif;
+      background:#0B1F3B;
+      color:white;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+      text-align:center;
+    }
+
+    .loading{
+      max-width:500px;
+      padding:30px;
+    }
+
+    h1{
+      margin-bottom:10px;
+      letter-spacing:2px;
+    }
+
+    p{
+      color:#cbd5e1;
+    }
+
+    .loader{
+      margin:30px auto;
+      width:55px;
+      height:55px;
+      border-radius:50%;
+      border:5px solid rgba(255,255,255,.2);
+      border-top:5px solid #2A9D8F;
+      animation:spin 1s linear infinite;
+    }
+
+    @keyframes spin{
+      to{
+        transform:rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="loading">
+
+<h1>Synapse Journal</h1>
+
+<p>Loading Editor...</p>
+
+<div class="loader"></div>
+
+<p>If the editor doesn't load yet, that's normal until the CMS configuration and Netlify Identity are set up.</p>
+
+</div>
+
+</body>
+</html>
